@@ -36,3 +36,18 @@ This is a full-stack e-commerce application built using the MERN stack (MongoDB,
 ### **Milestone 1: Project Overview**
 
 In Milestone 1, we focused on laying the groundwork for the e-commerce application. This included defining the project scope, setting up the tech stack (MongoDB, Express.js, React, Node.js), and establishing the basic folder structure for both the backend and frontend. We also covered the environment setup, including installing necessary dependencies and configuring the project for local development. The goal of this milestone was to ensure that the project foundation was solid and ready for the next steps in building the full application.
+
+
+### **Milestone 2: Project Setup & Login Page**
+
+*Overview*
+
+In this milestone, we structured the project, set up the frontend and backend, and built a basic login page using React and Tailwind CSS. This setup lays the foundation for the e-commerce application.
+
+*Tasks Completed*
+
+-Project Structure: Organized separate frontend and backend directories.
+-Frontend Setup: Initialized a React project using Vite.
+-Backend Setup: Set up a Node.js and Express server (to be expanded in future milestones).
+-Tailwind CSS Integration: Configured Tailwind CSS for styling.
+-Login Page: Created a basic login form with email and password fields, styled with Tailwind CSS.
