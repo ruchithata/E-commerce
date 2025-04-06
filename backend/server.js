@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const ConnectDB = require('./src/database/db');
-const Error = require('./src/middleware/Error');
-const ErrorHandler = require('./src/utils/errorHandler');
+// const Error = require('./src/middleware/Error');
+// const ErrorHandler = require('./src/utils/errorHandler');
+const userRouter = require('./src/controllers/userRouter');
 
 require('dotenv').config({
     path: 'src/config/.env'
@@ -13,12 +14,14 @@ const URL = process.env.URL;
 
 app.use(express.json());
 app.use(cors());
-app.use(Error);
-app.use(ErrorHandler);
+// app.use(Error);
+// app.use(ErrorHandler);
 
 app.get('/', (req, res) => {
     res.send("Hello world!");
 });
+
+app.use('/UC', userRouter);
 
 app.listen(PORT, async() => {
     try{
