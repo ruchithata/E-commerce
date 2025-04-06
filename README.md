@@ -61,3 +61,9 @@ In this milestone, we set up the backend for our e-commerce application, connect
 - Node.js & Express Setup: Created an Express server to handle API requests.
 - MongoDB Integration: Connected the application to a MongoDB database using Mongoose.
 - Basic Error Handling: Implemented middleware to manage errors effectively.
+
+---
+
+### *Milestone 4 – User Model, Registration & Avatar Upload*
+
+This milestone sets up the foundational user system for the e-commerce backend. It includes the user schema, registration API (/sign-up), and Multer-based avatar upload middleware. The system checks for existing users, stores new ones with validation, and handles file uploads securely. Errors are logged and handled gracefully for debugging and clarity.
