@@ -64,6 +64,18 @@ In this milestone, we set up the backend for our e-commerce application, connect
 
 ---
 
-### *Milestone 4 – User Model, Registration & Avatar Upload*
+### **Milestone 4 – User Model, Registration & Avatar Upload**
 
 This milestone sets up the foundational user system for the e-commerce backend. It includes the user schema, registration API (/sign-up), and Multer-based avatar upload middleware. The system checks for existing users, stores new ones with validation, and handles file uploads securely. Errors are logged and handled gracefully for debugging and clarity.
+
+---
+
+### **Milestone 5 – User Registration UI and Flow**
+
+In this milestone, I implemented the complete Sign-Up flow from frontend to backend:
+
+- Built a responsive and clean Sign-Up Page using React and Tailwind CSS.
+- Integrated file upload (avatar) using FormData and multer.
+- Added form validation to ensure required fields and proper formats.
+- Connected to backend API with Axios and handled loading/error states.
+- Verified working Login functionality post-sign-up.
