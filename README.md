@@ -85,3 +85,11 @@ In this milestone, I implemented the complete Sign-Up flow from frontend to back
 ### **Milestone 6 - Strengthening Security with bcrypt**
 
 ​In this milestone, we focus on enhancing user authentication security by implementing password hashing using the bcrypt algorithm. This approach ensures that plaintext passwords are never stored, safeguarding user data against unauthorized access. By integrating bcrypt, we introduce a robust method to hash and verify passwords, significantly strengthening the overall security posture of the application.
+
+---
+
+### **​Milestone 7: Backend User Login Implementation​**
+
+User Credential Validation: Implement functionality to accept user login credentials (email/username and password) and retrieve the corresponding user data from the database.​
+
+Password Verification with Bcrypt: Utilize the bcrypt library to compare the hashed password stored in the database with the password provided by the user during login. This ensures that even if the database is compromised, plaintext passwords are not exposed, enhancing security.

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -12,6 +13,7 @@ const Signup = () => {
     });
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleChange = (e) => {
         if (e.target.name === "avatar") {
@@ -38,7 +40,8 @@ const Signup = () => {
             });
 
             if (response.data.success) {
-                navigate("/dashboard"); // Redirect after successful signup
+                console.log(response.data);
+                navigate("/"); // Redirect after successful signup
             }
         } catch (err) {
             setError(err.response?.data?.message || "Something went wrong.");
@@ -60,7 +63,6 @@ const Signup = () => {
                         id="name"
                         type="text"
                         name="name"
-                        placeholder="Full Name"
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full p-2 border rounded"
@@ -73,7 +75,6 @@ const Signup = () => {
                         id="email"
                         type="email"
                         name="email"
-                        placeholder="Enter your Email"
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full p-2 border rounded"
@@ -82,16 +83,25 @@ const Signup = () => {
                     <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                         Password
                     </label>
-                    <input
-                        id="password"
-                        type="password"
-                        name="password"
-                        placeholder="Create Password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded"
-                        required
-                    />
+                    <div className="relative">
+                        <input
+                            id="password"
+                            type={showPassword? "text":"password"}
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            className="w-full p-2 pr-10 border rounded"
+                            required
+                        />
+                        <button
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500"
+                        >
+                            {showPassword? <FaEyeSlash/> : <FaEye/>}
+                        </button>
+                    </div>
+                    
                     <label htmlFor="avatar" className="block text-sm font-medium text-gray-700">
                         Upload your profile
                     </label>
