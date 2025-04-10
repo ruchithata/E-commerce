@@ -2,6 +2,12 @@ const { Router } = require("express");
 const userModel = require("../models/userModel");
 const { Avatar } = require("../middleware/MulterUpload");
 const bcrypt = require("bcrypt");
+const jwt = require('jsonwebtoken');
+require('dotenv').config({
+    path: './src/config/.env'
+});
+
+const secret = process.env.SECRETKEY;
 
 const userRouter = Router();
 
@@ -26,14 +32,45 @@ userRouter.post('/sign-up', Avatar.single("avatar"), async(req,res) => {
             avatar: req.file? req.file.path : ""
         });
 
+        console.log(req.file);
         console.log(newUser);
-        res.status(201).json({message: "Registered successfully.", newUser});
+        res.status(201).json({success: true, message: "Registered successfully.", newUser});
     }
     catch(err){
         console.log("error in adding a new user", err);
         res.status(400).json({message: "Internal Server Error"});
     }
 });
+
+userRouter.post('/login', async(req,res) => {
+    try{
+        const {email, password} = req.body;
+
+        if(!email || !password){
+            return res.status(400).json({message: "Provide your email and password"});
+        }
+
+        const user = await userModel.findOne({email});
+        if(!user){
+            return res.status(404).json({message: "Invalid email or password"});
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if(!isMatch){
+            return res.status(400).json({message: "Invalid password"});
+        }
+
+        const token = jwt.sign({email}, secret, {expiresIn: '1h'});
+
+        console.log(user);
+        res.status(200).json({success: true, message: "Logged in successfully", token, user});
+    }
+    catch(err){
+        console.log("error in logging in", err);
+        res.status(500).json({message: "Internal Server Error"});
+    }
+});
+
 
 userRouter.get('/all-users', async(req,res) => {
     try{
