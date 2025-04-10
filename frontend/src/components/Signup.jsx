@@ -53,7 +53,11 @@ const Signup = () => {
                 <h2 className="text-2xl font-bold text-center mb-4">Sign Up</h2>
                 {error && <p className="text-red-500 text-center mb-4">{error}</p>}
                 <form onSubmit={handleSubmit} className="space-y-4">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                        Name
+                    </label>
                     <input
+                        id="name"
                         type="text"
                         name="name"
                         placeholder="Full Name"
@@ -62,25 +66,37 @@ const Signup = () => {
                         className="w-full p-2 border rounded"
                         required
                     />
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                        Email
+                    </label>
                     <input
+                        id="email"
                         type="email"
                         name="email"
-                        placeholder="Email"
+                        placeholder="Enter your Email"
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full p-2 border rounded"
                         required
                     />
+                    <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                        Password
+                    </label>
                     <input
+                        id="password"
                         type="password"
                         name="password"
-                        placeholder="Password"
+                        placeholder="Create Password"
                         value={formData.password}
                         onChange={handleChange}
                         className="w-full p-2 border rounded"
                         required
                     />
+                    <label htmlFor="avatar" className="block text-sm font-medium text-gray-700">
+                        Upload your profile
+                    </label>
                     <input
+                    id="avatar"
                         type="file"
                         name="avatar"
                         onChange={handleChange}
