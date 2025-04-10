@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const userModel = require("../models/userModel");
 const { Avatar } = require("../middleware/MulterUpload");
+const bcrypt = require("bcrypt");
 
 const userRouter = Router();
 
@@ -16,16 +17,17 @@ userRouter.post('/sign-up', Avatar.single("avatar"), async(req,res) => {
             return res.status(400).json({message: "User already exists."});
         }
 
-        const avatar = req.file? req.file.filename : "";
+        const hashedPassword = await bcrypt.hash(password, 10);
 
         const newUser = await userModel.create({
             name,
             email,
-            password,
-            avatar
+            password: hashedPassword,
+            avatar: req.file? req.file.path : ""
         });
+
         console.log(newUser);
-        return res.status(200).json({message: "Registered successfully.", newUser});
+        res.status(201).json({message: "Registered successfully.", newUser});
     }
     catch(err){
         console.log("error in adding a new user", err);
