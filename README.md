@@ -79,3 +79,9 @@ In this milestone, I implemented the complete Sign-Up flow from frontend to back
 - Added form validation to ensure required fields and proper formats.
 - Connected to backend API with Axios and handled loading/error states.
 - Verified working Login functionality post-sign-up.
+
+---
+
+### **Milestone 6 - Strengthening Security with bcrypt**
+
+​In this milestone, we focus on enhancing user authentication security by implementing password hashing using the bcrypt algorithm. This approach ensures that plaintext passwords are never stored, safeguarding user data against unauthorized access. By integrating bcrypt, we introduce a robust method to hash and verify passwords, significantly strengthening the overall security posture of the application.
