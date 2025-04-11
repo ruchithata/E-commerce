@@ -1,0 +1,39 @@
+meta {
+  name: adding a product
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/products/create-product
+  body: multipartForm
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Wireless Mouse",
+    "description": "A high precision wireless mouse",
+    "price": 1499,
+    "category": "Electronics",
+    "stock": 30,
+    "tag": "mouse",
+    "email": "seller@example.com",
+    "imageUrls": [
+      "https://example.com/images/mouse-front.png",
+      "https://example.com/images/mouse-side.png"
+    ]
+  }
+}
+
+body:multipart-form {
+  name: "Some product name" @contentType(Text)
+  description: "Short desc"
+  price: 199
+  category: "electronics"
+  stock: 5
+  tag: "sale"
+  email: "user@example.com"
+  files: @file(C:\Users\ruchi\OneDrive\Pictures\Screenshots 1\2024-10-21 (7).png)
+  files: @file(C:\Users\ruchi\OneDrive\Pictures\Screenshots 1\2024-10-21 (8).png)
+}
