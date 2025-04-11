@@ -93,3 +93,9 @@ In this milestone, I implemented the complete Sign-Up flow from frontend to back
 User Credential Validation: Implement functionality to accept user login credentials (email/username and password) and retrieve the corresponding user data from the database.​
 
 Password Verification with Bcrypt: Utilize the bcrypt library to compare the hashed password stored in the database with the password provided by the user during login. This ensures that even if the database is compromised, plaintext passwords are not exposed, enhancing security.
+
+---
+
+### **Milestone 8: Product Card Component & Homepage Layout**
+
+In this milestone, we focused on building a reusable ProductCard component using React and styled it with Tailwind CSS. We then integrated this component into the Home page, displaying a dynamic grid of product cards. This approach enhances scalability and maintainability, allowing for efficient rendering of multiple products.
