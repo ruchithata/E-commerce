@@ -99,3 +99,10 @@ Password Verification with Bcrypt: Utilize the bcrypt library to compare the has
 ### **Milestone 8: Product Card Component & Homepage Layout**
 
 In this milestone, we focused on building a reusable ProductCard component using React and styled it with Tailwind CSS. We then integrated this component into the Home page, displaying a dynamic grid of product cards. This approach enhances scalability and maintainability, allowing for efficient rendering of multiple products.
+
+---
+
+### **Milestone 9: Product Form Creation**
+
+- *Frontend Form:* A user-friendly form to input product details like name, price, description, category, and images.
+- *Form File:* Created *ProductForm.jsx* for data collection and validation.
