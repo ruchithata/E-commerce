@@ -5,6 +5,7 @@ const ConnectDB = require('./src/database/db');
 // const Error = require('./src/middleware/Error');
 // const ErrorHandler = require('./src/utils/errorHandler');
 const userRouter = require('./src/controllers/userRouter');
+const productRouter = require('./src/controllers/productRouter');
 
 require('dotenv').config({
     path: 'src/config/.env'
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/UC', userRouter);
+app.use('/products', productRouter);
 
 app.listen(PORT, async() => {
     try{

@@ -106,3 +106,13 @@ In this milestone, we focused on building a reusable ProductCard component using
 
 - *Frontend Form:* A user-friendly form to input product details like name, price, description, category, and images.
 - *Form File:* Created *ProductForm.jsx* for data collection and validation.
+
+---
+
+### **Milestone 10: Add product endpoint**
+
+POST /add-product route created
+Uses multer middleware for multiple image uploads
+Form-data includes product details + image files
+Seller validated using email from request
+Sends back success response with product details
